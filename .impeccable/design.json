@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-03T00:00:00.000Z",
+  "title": "Design System: The Point",
+  "extensions": {
+    "colorMeta": {
+      "ink-black": {
+        "role": "primary",
+        "displayName": "Ink Black",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#141414", "#222222", "#333333", "#585858", "#999999", "#dddddd", "#ffffff"]
+      },
+      "paper-white": {
+        "role": "primary",
+        "displayName": "Paper White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#000000", "#333333", "#585858", "#999999", "#cccccc", "#dddddd", "#fafafa", "#ffffff"]
+      },
+      "print-cyan": {
+        "role": "secondary",
+        "displayName": "Print Cyan",
+        "canonical": "#00d1ff",
+        "tonalRamp": ["#00242c", "#005466", "#007f99", "#00a9cc", "#00d1ff", "#52ddff", "#a3efff", "#e5fbff"]
+      },
+      "print-magenta": {
+        "role": "secondary",
+        "displayName": "Print Magenta",
+        "canonical": "#ff00c7",
+        "tonalRamp": ["#2e0025", "#66004f", "#990077", "#cc00a0", "#ff00c7", "#ff52d8", "#ffa3eb", "#ffe5f9"]
+      },
+      "print-yellow": {
+        "role": "secondary",
+        "displayName": "Print Yellow",
+        "canonical": "#fff500",
+        "tonalRamp": ["#2e2c00", "#666200", "#999300", "#ccc400", "#fff500", "#fff752", "#fffba3", "#fffde5"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero statements and large printshop signal words."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Service descriptions, specs, and contact guidance."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-standard",
+        "value": "180ms ease",
+        "purpose": "Simple hover, focus, and menu state changes."
+      }
+    ],
+    "breakpoints": [
+      { "name": "desktop", "value": "992px" },
+      { "name": "tablet", "value": "768px" },
+      { "name": "mobile", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main project inquiry action on dark surfaces.",
+      "html": "<button class=\"ds-btn-primary\">Comencemos un proyecto</button>",
+      "css": ".ds-btn-primary { background: #ff00c7; color: #fff; border: 1px solid #ff00c7; border-radius: 0; padding: 12px 30px; font-family: Montserrat, Arial, sans-serif; font-weight: 700; cursor: pointer; transition: background 180ms ease, color 180ms ease, border-color 180ms ease; } .ds-btn-primary:hover { background: #fff; color: #000; border-color: #fff; } .ds-btn-primary:focus-visible { outline: 3px solid #fff500; outline-offset: 3px; }"
+    },
+    {
+      "name": "Dark Input",
+      "kind": "input",
+      "refersTo": "input-dark",
+      "description": "Transparent contact field on black/footer imagery.",
+      "html": "<input class=\"ds-input-dark\" placeholder=\"Correo\" />",
+      "css": ".ds-input-dark { height: 50px; border: 1px solid #fff; border-radius: 4px; background: transparent; color: #fff; padding: 8px 12px; font-family: Montserrat, Arial, sans-serif; font-size: 17px; } .ds-input-dark::placeholder { color: rgba(255,255,255,.78); } .ds-input-dark:focus-visible { outline: 3px solid #00d1ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "CMY Color Bar",
+      "kind": "custom",
+      "refersTo": "color-bar",
+      "description": "Thin registration-style identity strip.",
+      "html": "<div class=\"ds-cmy\"><span></span><span></span><span></span></div>",
+      "css": ".ds-cmy { display: flex; width: 100%; height: 3px; } .ds-cmy span:nth-child(1) { flex: 1; background: #00d1ff; } .ds-cmy span:nth-child(2) { flex: 1; background: #ff00c7; } .ds-cmy span:nth-child(3) { flex: 1; background: #fff500; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Printshop Signal",
+    "overview": "The Point design system is built from production graphics: black fields, white type, sharp CMY accents, and real work imagery. It should feel direct and made, not airy or decorative.",
+    "keyCharacteristics": [
+      "Black and white dominate the experience.",
+      "Cyan, magenta, and yellow appear as decisive print accents.",
+      "Headlines are heavy, compact, and direct.",
+      "Photography shows finished signage, print pieces, and installation work."
+    ],
+    "rules": [
+      { "name": "The CMY Signal Rule", "body": "Cyan, magenta, and yellow must feel like printshop identity, not random decoration.", "section": "colors" },
+      { "name": "The Black Field Rule", "body": "Hero and footer experiences stay dark. Do not turn the site into a pale brochure.", "section": "colors" },
+      { "name": "The Flat Print Rule", "body": "Surfaces are flat unless a modal overlay requires depth. No decorative card shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep black, white, cyan, magenta, and yellow as the identity core.",
+      "Do use real work imagery for products, services, and portfolio proof.",
+      "Do keep form interactions direct, with clear success and error states."
+    ],
+    "donts": [
+      "Don't make this look like a generic SaaS landing page.",
+      "Don't use soft pastel startup visuals.",
+      "Don't add heavy glassmorphism or decorative shadows.",
+      "Don't replace the printshop identity with stock-photo brochure sameness."
+    ]
+  }
+}

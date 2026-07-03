@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "framework": "static-html",
+  "files": ["*.html", "pages/*.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

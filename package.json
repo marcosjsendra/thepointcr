@@ -1,0 +1,14 @@
+{
+  "name": "the-point-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brochure website for The Point printshop and signage studio.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
