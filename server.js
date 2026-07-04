@@ -1,8 +1,39 @@
 const http = require("node:http");
 const path = require("node:path");
+const { existsSync, readFileSync } = require("node:fs");
 const { readFile, stat } = require("node:fs/promises");
 
 const rootDir = __dirname;
+
+function loadLocalEnv() {
+  const envPath = path.join(rootDir, ".env");
+  if (!existsSync(envPath)) return;
+
+  const lines = readFileSync(envPath, "utf8").split(/\r?\n/);
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) return;
+
+    const separator = trimmed.indexOf("=");
+    if (separator === -1) return;
+
+    const key = trimmed.slice(0, separator).trim();
+    let value = trimmed.slice(separator + 1).trim();
+    if (!key || process.env[key] !== undefined) return;
+
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+
+    process.env[key] = value;
+  });
+}
+
+loadLocalEnv();
+
 const port = Number(process.env.PORT || 3000);
 const isProduction = process.env.NODE_ENV === "production";
 const maxBodyBytes = 64 * 1024;
