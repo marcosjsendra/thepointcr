@@ -22,12 +22,23 @@ For production, configure one delivery option:
 
 Copy `.env.example` to `.env` for local testing.
 
-## Railway
+## Vercel
 
-Railway can deploy this folder as a Node app. The start command is:
+Vercel can deploy this repository with the Node preset. Keep these import settings:
 
-```bash
-npm start
+```txt
+Application Preset: Node
+Root Directory: ./
+Build Command: None
+Output Directory: N/A
+```
+
+For the contact form, add these Vercel environment variables for Production and Preview:
+
+```env
+CONTACT_TO=info@thepointcr.com
+RESEND_API_KEY=your_resend_api_key_here
+CONTACT_FROM=The Point CR <hello@thepointcr.com>
 ```
 
 The health endpoint is `/health`.
