@@ -24,13 +24,13 @@ Copy `.env.example` to `.env` for local testing.
 
 ## Vercel
 
-Vercel can deploy this repository with the Node preset. Keep these import settings:
+Vercel deploys this repository as a static site with a `/api/contact` function. Keep these import settings:
 
 ```txt
-Application Preset: Node
+Application Preset: Other
 Root Directory: ./
 Build Command: None
-Output Directory: N/A
+Output Directory: .
 ```
 
 For the contact form, add these Vercel environment variables for Production and Preview:
