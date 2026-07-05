@@ -165,3 +165,22 @@ More detail is documented in:
 5. Test incoming mail to both addresses.
 6. Confirm Resend still shows the sending domain as verified.
 7. Once email is verified, cancel/let expire the HostFast hosting service.
+
+## Simple Client Explanation
+
+We updated the website so it is no longer just an old exported Webflow/static site sitting on traditional hosting. The design and identity were preserved, but the underlying code was cleaned, organized, and made easier to maintain.
+
+The website was moved into GitHub, which gives us a proper version history and a safer way to keep improving it over time. Any future changes can now be tracked, reviewed, and restored if needed.
+
+The site was then deployed to Vercel, a modern hosting platform. This makes the website faster to deploy, easier to maintain, and less dependent on the old HostFast/cPanel hosting environment.
+
+The contact form was also modernized. Instead of relying on old hosting mail behavior, the form now sends messages through Resend, a dedicated email delivery service. This gives us a cleaner and more reliable setup for receiving website inquiries.
+
+We also added project documentation:
+
+- `PRODUCT.md` explains what the website is for, who it serves, and what business goals it supports.
+- `DESIGN.md` documents the design direction and visual identity.
+
+These documents make the project easier to continue in the future, even with another developer or another AI/LLM tool, because the product context and design rules are clearly written down.
+
+In short, the website now has a more modern technical foundation, cleaner deployment, better contact-form delivery, and clearer documentation for future growth.
